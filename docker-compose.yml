@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  miuitask:
+    image: o1si/miui-auto-tasks:latest
+    container_name: miuitask
+    volumes:
+      - ./data:/srv/data
+      - ./logs:/srv/logs
+    environment:
+      - TZ=Asia/Shanghai

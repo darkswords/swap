@@ -1,0 +1,12 @@
+services:
+  mediawarp:
+    image: akimio/mediawarp:latest
+    container_name: mediawarp
+    restart: always
+    network_mode: host 
+    #ports:
+    #  - 9000:9000
+    volumes:
+      - ./config:/config
+      - ./logs:/logs
+      - ./static:/static

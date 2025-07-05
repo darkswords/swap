@@ -1,0 +1,23 @@
+services:
+  emby:
+    #image: amilys/embyserver_arm64v8:latest
+    image: amilys/embyserver:latest
+    container_name: emby
+    network_mode: host
+    #networks:
+    #  share:
+    #    ipv4_address: 192.168.112.31
+    ports:
+      - 8096:8096  #http
+    #  - 8920:8920  #https
+    volumes:
+      - ./config:/config
+      - /root/embys/auto_symlink/strm:/strm_tv  
+      - ./transcode:/transcode  
+    environment:
+      - UID=0
+      - GID=0
+      - GIDLIST=0
+    devices:
+      - /dev/dri:/dev/dri
+    restart: always

@@ -1,7 +1,8 @@
 services:
   caddy:
     image: caddy:latest
-    restart: unless-stopped
+    container_name: caddy
+    restart: always
     cap_add:
       - NET_ADMIN
     ports:
@@ -9,11 +10,7 @@ services:
       - "443:443"
       - "443:443/udp"
     volumes:
-      - $PWD/conf:/etc/caddy
-      - $PWD/site:/srv
-      - caddy_data:/data
-      - caddy_config:/config
-
-volumes:
-  caddy_data:
-  caddy_config:
+      - ./conf:/etc/caddy
+      - ./site:/srv
+      - ./caddy_data:/data
+      - ./caddy_config:/config

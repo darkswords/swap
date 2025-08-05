@@ -6,10 +6,10 @@ services:
     restart: always
     cap_add:
       - NET_ADMIN
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+    #ports:
+    #  - "80:80"
+    #  - "443:443"
+    #  - "443:443/udp"
     volumes:
       - ./conf:/etc/caddy
       #- ./site:/srv

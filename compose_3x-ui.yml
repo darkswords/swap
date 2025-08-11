@@ -11,4 +11,4 @@ services:
       XUI_ENABLE_FAIL2BAN: "true"
     tty: true
     network_mode: host
-    restart: akways
+    restart: always

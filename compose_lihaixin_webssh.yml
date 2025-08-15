@@ -1,0 +1,13 @@
+services:
+  webssh:
+    image: lihaixin/webssh:latest
+    container_name: webssh
+    network_mode: host
+    hostname: webssh
+    restart: always
+    #networks:
+    #  - share
+    #environment:
+    #  - QQ=***
+    #ports:
+    #  - "8888:8888"

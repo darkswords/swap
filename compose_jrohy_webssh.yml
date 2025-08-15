@@ -1,0 +1,10 @@
+services:
+  webssh:
+    image: jrohy/webssh
+    container_name: webssh
+    network_mode: host
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - savePass=true
+    

@@ -4,6 +4,9 @@ services:
     container_name: caddy
     network_mode: host
     restart: always
+    #environment:
+    #  - ACME_AGREE=true          
+    #  - CLOUDFLARE_API_TOKEN=xxxx
     cap_add:
       - NET_ADMIN
     #ports:

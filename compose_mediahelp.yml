@@ -2,10 +2,10 @@ services:
   mediahelper:
     image: rongyunmu/mediahelp:latest
     container_name: mediahelper
-    restart: unless-stopped
+    restart: always
     ports:
       - "3300:80"     # 网页访问端口
       - "8091:8091"   # 后端服务端口
     volumes:
-      - /你的配置目录:/app/backend/db        # 数据库存储
-      - /你的配置目录:/app/backend/strm      # strm存储
+      - ./db:/app/backend/db        # 数据库存储
+      - ./strm:/app/backend/strm    # strm存储

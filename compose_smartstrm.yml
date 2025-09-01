@@ -6,10 +6,9 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - /yourpath/smartstrm/config:/app/config # 挂载配置目录
-      - /yourpath/smartstrm/logs:/app/logs # 挂载日志目录，可选
-      - /yourpath/smartstrm/strm:/strm # 挂载 STRM 生成目录
-      # 以上 /yourpath 改为你实际存放配置的路径
+      - ./config:/app/config # 挂载配置目录
+      - ./logs:/app/logs # 挂载日志目录，可选
+      - ./strm:/strm # 挂载 STRM 生成目录
     environment:
       - PORT=8024 # 管理端口，可选
       - ADMIN_USERNAME=admin # 管理用户名

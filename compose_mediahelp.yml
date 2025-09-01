@@ -4,9 +4,8 @@ services:
     container_name: mediahelper
     restart: always
     ports:
-      - "3300:80"     # 网页访问端口
-      - "8091:8091"   # 后端服务端口
+      - "3300:80"     
+      - "8091:8091"   
     volumes:
-      - ./config:/app/backend/config  
       - ./db:/app/backend/db
       - ./strm:/app/backend/strm

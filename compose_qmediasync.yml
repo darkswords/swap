@@ -1,0 +1,15 @@
+services:
+  qmediasync:
+    image: qicfan/qmediasync:latest
+      container_name: qmediasync
+      network_mode: bridge 
+      restart: always
+      ports:
+        - "12333:12333"
+        - "8095:8095"
+        #- "8094:8094"
+      volumes:
+        - ./config:/app/config
+        - ./media:/media
+      environment:
+        - TZ=Asia/Shanghai

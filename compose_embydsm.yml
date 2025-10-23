@@ -1,0 +1,31 @@
+services:
+  embyserver:
+    image: emby/embyserver:latest 
+    container_name: embyserver
+    networks:
+      - media 
+    restart: always
+    environment:
+      - PUID=0
+      - PGID=0
+      - NVIDIA_VISIBLE_DEVICES=all
+      - AMDGPU_IDS=/share/libdrm/amdgpu.ids
+      - TZ=Asia/Shanghai 
+      - GIDLIST=109,101 
+      - LANG=en_US.UTF-8
+      - FONTCONFIG_PATH=/etc/fonts
+      - LIBVA_DRIVERS_PATH=/usr/lib/x86_64-linux-gnu/dri
+    ports:
+      - "8096:8096" # HTTP port
+      - "8920:8920" # HTTPS port 
+    volumes:
+      - /volume1/docker/emby/config:/config:rw
+      - /volume2/Media:/mnt/share1:rw
+      - /volume2/music:/mnt/share2:rw
+      - /volume3/MOV-AV:/mnt/share3:rw 
+      - /volume4/其它:/mnt/share4:rw 
+    devices:
+      - /dev/dri:/dev/dri
+   networks: 
+     media:
+       external: true

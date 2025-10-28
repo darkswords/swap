@@ -1,0 +1,10 @@
+services:
+  lucky:
+    image: gdy666/lucky:latest
+    container_name: lucky
+    restart: always
+    network_mode: bridge
+    ports:
+      - 16601:16601
+    volumes:
+      - ./luckyconf:/goodluck

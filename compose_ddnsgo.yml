@@ -1,6 +1,6 @@
 service:
   ddns-go:
-    image: jeessy/ddns-go
+    image: jeessy/ddns-go:latest
     container_name: ddns-go
     restart: always
     network_mode: host # port 9876

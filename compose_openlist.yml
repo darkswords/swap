@@ -1,8 +1,11 @@
 services:
   openlist:
+    image: 'openlistteam/openlist:latest'
+    container_name: openlist
+    network_mode: bridge
     restart: always
     volumes:
-      - './openlist:/opt/openlist/data'
+      - './data:/opt/openlist/data'
     ports:
       - '5244:5244'
     # - '5245:5245'
@@ -10,6 +13,6 @@ services:
       - PUID=0
       - PGID=0
       - UMASK=022
-      - TZ=UTC
-    container_name: openlist
-    image: 'openlistteam/openlist:latest'
+      - TZ=Asia/Shanghai
+    
+    

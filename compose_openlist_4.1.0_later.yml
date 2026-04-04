@@ -2,7 +2,8 @@ services:
   openlist:
     image: 'openlistteam/openlist:latest'
     container_name: openlist
-    user: '0:0' # Please replace `0:0` with the actual user ID and group ID you want to use to run OpenList.
+    network_mode: bridge
+    user: '0:0' 
     volumes:
       - './data:/opt/openlist/data'
     ports:

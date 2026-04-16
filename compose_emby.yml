@@ -15,8 +15,8 @@ services:
     volumes:
       - ./config:/config
       - /root/public_data/embyserver/cache:/config/cache
-      - /root/pulbic_data/embyserver/metadata:/config/metadata
-      - /root/pulbic_data/strm:/strm  
+      - /root/public_data/embyserver/metadata:/config/metadata
+      - /root/public_data/strm:/strm  
       - ./transcode:/transcode  
     environment:
       - UID=0
